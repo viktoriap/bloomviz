@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/lib/paper-full.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/grid.js') }}"></script>
+    <script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="wrapper">
+            <div class="array">
+                <label for="intro"><strong>Description: </strong></label>
+                <p id="intro">A Bloom filter is a probabilistic data structure that tells whether an
+                    element is present in a set. It tells us whether the element definitely is not in the set or may be
+                    in the set. False positives might occur, but not false negatives.
+                </p>
+                <label for="feedback"><strong>Feedback: </strong></label>
+                <p id="feedback"></p>
+                <canvas id="bitarray" width="811px" height="51px"></canvas>
+            </div>
+            <div class="inputs">
+                <div class="col-xs-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="value">
+                        <span class="input-group-btn">
+             <button class="btn btn-default" id="add">Add</button>
+        </span>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="find">
+                        <span class="input-group-btn">
+            <button class="btn btn-default" id="find">Find</button>
+        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

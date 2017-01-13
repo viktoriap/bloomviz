@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/lib/paper-full.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/grid2.js') }}"></script>
+    <script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="wrapper">
+            <div class="array">
+                <label for="intro"><strong>Description: </strong></label>
+                <p id="intro">Cuckoo hashing is a method that could be used to resolve hash table collisions. It uses
+                    two equally sized tables and two hash functions to add elements. If a collision occurs, an old value
+                    is removed from its position and added to a new location in the hash table.
+                </p>
+                <label for="feedback"><strong>Feedback: </strong></label>
+                <p id="feedback"></p>
+                <canvas id="hashtable" width="811px" height="106px"></canvas>
+            </div>
+            <div class="inputs">
+                <div class="col-xs-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="value">
+                        <span class="input-group-btn">
+             <button class="btn btn-default" id="add">Add</button>
+        </span>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="find">
+                        <span class="input-group-btn">
+            <button class="btn btn-default" id="find">Find</button>
+        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "bootstrap/base.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block title %}Bloom filter visualization{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Bloom Filter and Cuckoo Hashing Visualization Tool</a>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Bloom filter</a></li>
+                <li><a href="/cuckoo">Cuckoo Hashing</a></li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}

@@ -1,0 +1,23 @@
+div.wrapper {
+    float: left;
+    position: absolute;
+    margin: 0 auto;
+}
+
+div.array {
+    margin-left: 30px;
+}
+
+div.inputs {
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+p#feedback, p#intro, .array label {
+    margin-left: 8px;
+}
+
+p#intro {
+    width: 600px;
+    text-align: justify;
+}
